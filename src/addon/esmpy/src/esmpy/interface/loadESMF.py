@@ -113,8 +113,10 @@ elif "Linux" in esmfos:
     constants._ESMF_OS = constants._ESMF_OS_LINUX
 elif "Unicos" in esmfos:
     constants._ESMF_OS = constants._ESMF_OS_UNICOS
+elif "Cygwin" in esmfos:
+    constants._ESMF_OS = constants._ESMF_OS_LINUX
 else:
-    raise ValueError("Unrecognized ESMF_OS setting!")
+    raise ValueError(f"Unrecognized ESMF_OS setting: {esmfos:s}!")
 
 # set _ESMF_ABI for 32/64 switching
 if "64" in esmfabi:
