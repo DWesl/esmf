@@ -62,6 +62,8 @@ with open(esmfmk, 'r') as MKFILE:
     for line in MKFILE:
         if 'ESMF_LIBSDIR' in line:
             libsdir = line.split("=")[1]
+        elif 'ESMF_BINDIR' in line:
+            bindir = line.split("=", 1)[1].strip()
         elif 'ESMF_OS:' in line:
             esmfos = line.split(":")[1]
         elif 'ESMF_ABI:' in line:
@@ -114,7 +116,7 @@ elif "Linux" in esmfos:
 elif "Unicos" in esmfos:
     constants._ESMF_OS = constants._ESMF_OS_UNICOS
 elif "Cygwin" in esmfos:
-    constants._ESMF_OS = constants._ESMF_OS_LINUX
+    constants._ESMF_OS = constants._ESMF_OS_CYGWIN
 else:
     raise ValueError(f"Unrecognized ESMF_OS setting: {esmfos:s}!")
 
@@ -150,6 +152,8 @@ constants._ESMF_USE_INMEM_FACTORS = use_inmem_factors
 try:
     if constants._ESMF_OS == constants._ESMF_OS_DARWIN:
         _ESMF = np.ctypeslib.load_library('libesmf_fullylinked',libsdir)
+    elif constants._ESMF_OS == constants._ESMF_OS_CYGWIN:
+        _ESMF = np.ctypeslib.load_library('cygesmf.dll', bindir)
     else:
         _ESMF = ct.CDLL(os.path.join(libsdir,'libesmf_fullylinked.so'),
                         mode=ct.RTLD_GLOBAL)
