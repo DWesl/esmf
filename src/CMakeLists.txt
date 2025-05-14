@@ -1,0 +1,16 @@
+
+target_include_directories(esmf PRIVATE ${ESMF_SOURCE_DIR}/src/include)
+
+if(${Git_FOUND})
+    string(REGEX REPLACE "^([0-9]+)\.([0-9]+)(\.[0-9]+)?$" "\\1.\\2" ESMF_VERSION_STRING_GIT ${GIT_VERSION_STRING})
+    add_compile_definitions(ESMF_VERSION_STRING_GIT="${ESMF_VERSION_STRING_GIT}")
+endif()
+add_subdirectory(Infrastructure)
+add_subdirectory(epilogue)
+add_subdirectory(apps)
+add_subdirectory(Superstructure)
+add_subdirectory(doc)
+add_subdirectory(test_harness)
+add_subdirectory(system_tests)
+add_subdirectory(addon)
+add_subdirectory(prologue)

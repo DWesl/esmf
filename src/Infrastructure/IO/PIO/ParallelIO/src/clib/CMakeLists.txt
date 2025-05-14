@@ -154,8 +154,8 @@ if (PIO_C_EXTRA_LINK_FLAGS)
 endif ()
 
 #===== Check for necessities =====
-if (NOT PnetCDF_C_FOUND AND NOT NetCDF_C_FOUND)
-  message (FATAL_ERROR "Must have PnetCDF and/or NetCDF C libraries")
+if ((NOT PnetCDF_C_FOUND) AND (NOT NetCDF_C_FOUND) AND (NOT NETCDF_C_FOUND))
+  message (SEND_ERROR "Must have PnetCDF and/or NetCDF C libraries")
 endif ()
 
 #===== MPI =====

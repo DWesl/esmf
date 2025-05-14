@@ -1,0 +1,16 @@
+
+target_include_directories(esmf PRIVATE ${ESMF_SOURCE_DIR}/src/Superstructure/ESMFMod/tests/../include)
+
+if(${Git_FOUND})
+    string(REGEX REPLACE "^([0-9]+)\.([0-9]+)(\.[0-9]+)?$" "\\1.\\2" ESMF_VERSION_STRING_GIT ${GIT_VERSION_STRING})
+    add_compile_definitions(ESMF_VERSION_STRING_GIT="${ESMF_VERSION_STRING_GIT}")
+endif()
+add_executable(ESMF_FrameworkUTest  ESMF_FrameworkUTest.F90)
+target_link_libraries(ESMF_FrameworkUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_FrameworkUTest OpenMP::OpenMP_Fortran)
+endif()
+add_test(RUN_ESMF_FramworkUTest COMMAND ESMF_FramworkUTest)
+set_property(TEST RUN_ESMF_FramworkUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_FramworkUTestUNI COMMAND ESMF_FramworkUTest)
+set_property(TEST RUN_ESMF_FramworkUTestUNI PROPERTY LABEL serial )

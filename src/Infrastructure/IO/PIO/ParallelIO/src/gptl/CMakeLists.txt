@@ -112,6 +112,7 @@ else()
   if (MPI_C_FOUND AND MPI_Fortran_FOUND)
     target_compile_definitions (gptl
       PUBLIC HAVE_MPI)
+    target_link_libraries(gptl PUBLIC MPI::MPI_Fortran)
   endif ()
 endif ()
 

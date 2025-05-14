@@ -1,0 +1,16 @@
+
+target_include_directories(esmf PRIVATE ${ESMF_SOURCE_DIR}/src/addon/NUOPC/tests/../include)
+
+if(${Git_FOUND})
+    string(REGEX REPLACE "^([0-9]+)\.([0-9]+)(\.[0-9]+)?$" "\\1.\\2" ESMF_VERSION_STRING_GIT ${GIT_VERSION_STRING})
+    add_compile_definitions(ESMF_VERSION_STRING_GIT="${ESMF_VERSION_STRING_GIT}")
+endif()
+add_executable(ESMF_NUOPC_UTest  ESMF_NUOPC_UTest.F90)
+target_link_libraries(ESMF_NUOPC_UTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_NUOPC_UTest OpenMP::OpenMP_Fortran)
+endif()
+add_test(RUN_ESMF_NUOPC_UTest COMMAND ESMF_NUOPC_UTest)
+set_property(TEST RUN_ESMF_NUOPC_UTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_NUOPC_UTestUNI COMMAND ESMF_NUOPC_UTest)
+set_property(TEST RUN_ESMF_NUOPC_UTestUNI PROPERTY LABEL serial )

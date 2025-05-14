@@ -1,0 +1,343 @@
+
+if(${Git_FOUND})
+    string(REGEX REPLACE "^([0-9]+)\.([0-9]+)(\.[0-9]+)?$" "\\1.\\2" ESMF_VERSION_STRING_GIT ${GIT_VERSION_STRING})
+    add_compile_definitions(ESMF_VERSION_STRING_GIT="${ESMF_VERSION_STRING_GIT}")
+endif()
+add_executable(ESMF_AttPackABundleUTest  ESMF_AttPackABundleUTest.F90)
+target_link_libraries(ESMF_AttPackABundleUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttPackABundleUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttPackArrayUTest  ESMF_AttPackArrayUTest.F90)
+target_link_libraries(ESMF_AttPackArrayUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttPackArrayUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttPackCplCompUTest  ESMF_AttPackCplCompUTest.F90)
+target_link_libraries(ESMF_AttPackCplCompUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttPackCplCompUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttPackDistGridUTest  ESMF_AttPackDistGridUTest.F90)
+target_link_libraries(ESMF_AttPackDistGridUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttPackDistGridUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttPackFBundleUTest  ESMF_AttPackFBundleUTest.F90)
+target_link_libraries(ESMF_AttPackFBundleUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttPackFBundleUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttPackFieldUTest  ESMF_AttPackFieldUTest.F90)
+target_link_libraries(ESMF_AttPackFieldUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttPackFieldUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttPackGridCompUTest  ESMF_AttPackGridCompUTest.F90)
+target_link_libraries(ESMF_AttPackGridCompUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttPackGridCompUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttPackGridUTest  ESMF_AttPackGridUTest.F90)
+target_link_libraries(ESMF_AttPackGridUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttPackGridUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttPackLocStreamUTest  ESMF_AttPackLocStreamUTest.F90)
+target_link_libraries(ESMF_AttPackLocStreamUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttPackLocStreamUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttPackSciCompUTest  ESMF_AttPackSciCompUTest.F90)
+target_link_libraries(ESMF_AttPackSciCompUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttPackSciCompUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttPackStateUTest  ESMF_AttPackStateUTest.F90)
+target_link_libraries(ESMF_AttPackStateUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttPackStateUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeArrayUTest  ESMF_AttributeArrayUTest.F90)
+target_link_libraries(ESMF_AttributeArrayUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeArrayUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeABundleUTest  ESMF_AttributeABundleUTest.F90)
+target_link_libraries(ESMF_AttributeABundleUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeABundleUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeCplCompUTest  ESMF_AttributeCplCompUTest.F90)
+target_link_libraries(ESMF_AttributeCplCompUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeCplCompUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeDistGridUTest  ESMF_AttributeDistGridUTest.F90)
+target_link_libraries(ESMF_AttributeDistGridUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeDistGridUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeFBundleUTest  ESMF_AttributeFBundleUTest.F90)
+target_link_libraries(ESMF_AttributeFBundleUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeFBundleUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeFieldUTest  ESMF_AttributeFieldUTest.F90)
+target_link_libraries(ESMF_AttributeFieldUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeFieldUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeGridCompUTest  ESMF_AttributeGridCompUTest.F90)
+target_link_libraries(ESMF_AttributeGridCompUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeGridCompUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeGridUTest  ESMF_AttributeGridUTest.F90)
+target_link_libraries(ESMF_AttributeGridUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeGridUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeLocStreamUTest  ESMF_AttributeLocStreamUTest.F90)
+target_link_libraries(ESMF_AttributeLocStreamUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeLocStreamUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeSciCompUTest  ESMF_AttributeSciCompUTest.F90)
+target_link_libraries(ESMF_AttributeSciCompUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeSciCompUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeStateUTest  ESMF_AttributeStateUTest.F90)
+target_link_libraries(ESMF_AttributeStateUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeStateUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeUpdateUTest  ESMF_AttributeUpdateUTest.F90)
+target_link_libraries(ESMF_AttributeUpdateUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeUpdateUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeUpdateComponentUTest  ESMF_AttributeUpdateComponentUTest.F90)
+target_link_libraries(ESMF_AttributeUpdateComponentUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeUpdateComponentUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeUpdateContainerStressUTest  ESMF_AttributeUpdateContainerStressUTest.F90)
+target_link_libraries(ESMF_AttributeUpdateContainerStressUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeUpdateContainerStressUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeUpdateMultiReconcileUTest  ESMF_AttributeUpdateMultiReconcileUTest.F90)
+target_link_libraries(ESMF_AttributeUpdateMultiReconcileUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeUpdateMultiReconcileUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeUpdateRemoveOnlyUTest  ESMF_AttributeUpdateRemoveOnlyUTest.F90)
+target_link_libraries(ESMF_AttributeUpdateRemoveOnlyUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeUpdateRemoveOnlyUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeUpdateReconcileUTest  ESMF_AttributeUpdateReconcileUTest.F90)
+target_link_libraries(ESMF_AttributeUpdateReconcileUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeUpdateReconcileUTest OpenMP::OpenMP_Fortran)
+endif()
+add_executable(ESMF_AttributeUtilUTest  ESMF_AttributeUtilUTest.F90)
+target_link_libraries(ESMF_AttributeUtilUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_AttributeUtilUTest OpenMP::OpenMP_Fortran)
+endif()
+add_test(RUN_ESMF_AttPackABundleUTest COMMAND ESMF_AttPackABundleUTest)
+set_property(TEST RUN_ESMF_AttPackABundleUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttPackArrayUTest COMMAND ESMF_AttPackArrayUTest)
+set_property(TEST RUN_ESMF_AttPackArrayUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttPackCplCompUTest COMMAND ESMF_AttPackCplCompUTest)
+set_property(TEST RUN_ESMF_AttPackCplCompUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttPackDistGridUTest COMMAND ESMF_AttPackDistGridUTest)
+set_property(TEST RUN_ESMF_AttPackDistGridUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttPackFBundleUTest COMMAND ESMF_AttPackFBundleUTest)
+set_property(TEST RUN_ESMF_AttPackFBundleUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttPackFieldUTest COMMAND ESMF_AttPackFieldUTest)
+set_property(TEST RUN_ESMF_AttPackFieldUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttPackGridCompUTest COMMAND ESMF_AttPackGridCompUTest)
+set_property(TEST RUN_ESMF_AttPackGridCompUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttPackGridUTest COMMAND ESMF_AttPackGridUTest)
+set_property(TEST RUN_ESMF_AttPackGridUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttPackLocStreamUTest COMMAND ESMF_AttPackLocStreamUTest)
+set_property(TEST RUN_ESMF_AttPackLocStreamUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttPackSciCompUTest COMMAND ESMF_AttPackSciCompUTest)
+set_property(TEST RUN_ESMF_AttPackSciCompUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttPackStateUTest COMMAND ESMF_AttPackStateUTest)
+set_property(TEST RUN_ESMF_AttPackStateUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeArrayUTest COMMAND ESMF_AttributeArrayUTest)
+set_property(TEST RUN_ESMF_AttributeArrayUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeABundleUTest COMMAND ESMF_AttributeABundleUTest)
+set_property(TEST RUN_ESMF_AttributeABundleUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeCplCompUTest COMMAND ESMF_AttributeCplCompUTest)
+set_property(TEST RUN_ESMF_AttributeCplCompUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeDistGridUTest COMMAND ESMF_AttributeDistGridUTest)
+set_property(TEST RUN_ESMF_AttributeDistGridUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeFieldUTest COMMAND ESMF_AttributeFieldUTest)
+set_property(TEST RUN_ESMF_AttributeFieldUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeFBundleUTest COMMAND ESMF_AttributeFBundleUTest)
+set_property(TEST RUN_ESMF_AttributeFBundleUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeGridCompUTest COMMAND ESMF_AttributeGridCompUTest)
+set_property(TEST RUN_ESMF_AttributeGridCompUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeGridUTest COMMAND ESMF_AttributeGridUTest)
+set_property(TEST RUN_ESMF_AttributeGridUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeLocStreamUTest COMMAND ESMF_AttributeLocStreamUTest)
+set_property(TEST RUN_ESMF_AttributeLocStreamUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeSciCompUTest COMMAND ESMF_AttributeSciCompUTest)
+set_property(TEST RUN_ESMF_AttributeSciCompUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeStateUTest COMMAND ESMF_AttributeStateUTest)
+set_property(TEST RUN_ESMF_AttributeStateUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeUpdateUTest COMMAND ESMF_AttributeUpdateUTest)
+set_property(TEST RUN_ESMF_AttributeUpdateUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeUpdateComponentUTest COMMAND ESMF_AttributeUpdateComponentUTest)
+set_property(TEST RUN_ESMF_AttributeUpdateComponentUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeUpdateContainerStressUTest COMMAND ESMF_AttributeUpdateContainerStressUTest)
+set_property(TEST RUN_ESMF_AttributeUpdateContainerStressUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeUpdateMultiReconcileUTest COMMAND ESMF_AttributeUpdateMultiReconcileUTest)
+set_property(TEST RUN_ESMF_AttributeUpdateMultiReconcileUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeUpdateReconcileUTest COMMAND ESMF_AttributeUpdateReconcileUTest)
+set_property(TEST RUN_ESMF_AttributeUpdateReconcileUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeUpdateRemoveOnlyUTest COMMAND ESMF_AttributeUpdateRemoveOnlyUTest)
+set_property(TEST RUN_ESMF_AttributeUpdateRemoveOnlyUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttributeUtilUTest COMMAND ESMF_AttributeUtilUTest)
+set_property(TEST RUN_ESMF_AttributeUtilUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_AttPackArrayUTestUNI COMMAND ESMF_AttPackArrayUTest)
+set_property(TEST RUN_ESMF_AttPackArrayUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttPackABundleUTestUNI COMMAND ESMF_AttPackABundleUTest)
+set_property(TEST RUN_ESMF_AttPackABundleUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttPackCplCompUTestUNI COMMAND ESMF_AttPackCplCompUTest)
+set_property(TEST RUN_ESMF_AttPackCplCompUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttPackDistGridUTestUNI COMMAND ESMF_AttPackDistGridUTest)
+set_property(TEST RUN_ESMF_AttPackDistGridUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttPackFBundleUTestUNI COMMAND ESMF_AttPackFBundleUTest)
+set_property(TEST RUN_ESMF_AttPackFBundleUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttPackFieldUTestUNI COMMAND ESMF_AttPackFieldUTest)
+set_property(TEST RUN_ESMF_AttPackFieldUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttPackGridCompUTestUNI COMMAND ESMF_AttPackGridCompUTest)
+set_property(TEST RUN_ESMF_AttPackGridCompUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttPackGridUTestUNI COMMAND ESMF_AttPackGridUTest)
+set_property(TEST RUN_ESMF_AttPackGridUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttPackLocStreamUTestUNI COMMAND ESMF_AttPackLocStreamUTest)
+set_property(TEST RUN_ESMF_AttPackLocStreamUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttPackSciCompUTestUNI COMMAND ESMF_AttPackSciCompUTest)
+set_property(TEST RUN_ESMF_AttPackSciCompUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttPackStateUTestUNI COMMAND ESMF_AttPackStateUTest)
+set_property(TEST RUN_ESMF_AttPackStateUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeArrayUTestUNI COMMAND ESMF_AttributeArrayUTest)
+set_property(TEST RUN_ESMF_AttributeArrayUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeABundleUTestUNI COMMAND ESMF_AttributeABundleUTest)
+set_property(TEST RUN_ESMF_AttributeABundleUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeCplCompUTestUNI COMMAND ESMF_AttributeCplCompUTest)
+set_property(TEST RUN_ESMF_AttributeCplCompUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeDistGridUTestUNI COMMAND ESMF_AttributeDistGridUTest)
+set_property(TEST RUN_ESMF_AttributeDistGridUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeFieldUTestUNI COMMAND ESMF_AttributeFieldUTest)
+set_property(TEST RUN_ESMF_AttributeFieldUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeFBundleUTestUNI COMMAND ESMF_AttributeFBundleUTest)
+set_property(TEST RUN_ESMF_AttributeFBundleUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeGridCompUTestUNI COMMAND ESMF_AttributeGridCompUTest)
+set_property(TEST RUN_ESMF_AttributeGridCompUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeGridUTestUNI COMMAND ESMF_AttributeGridUTest)
+set_property(TEST RUN_ESMF_AttributeGridUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeLocStreamUTestUNI COMMAND ESMF_AttributeLocStreamUTest)
+set_property(TEST RUN_ESMF_AttributeLocStreamUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeSciCompUTestUNI COMMAND ESMF_AttributeSciCompUTest)
+set_property(TEST RUN_ESMF_AttributeSciCompUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeStateUTestUNI COMMAND ESMF_AttributeStateUTest)
+set_property(TEST RUN_ESMF_AttributeStateUTestUNI PROPERTY LABEL serial )
+add_test(RUN_ESMF_AttributeUtilUTestUNI COMMAND ESMF_AttributeUtilUTest)
+set_property(TEST RUN_ESMF_AttributeUtilUTestUNI PROPERTY LABEL serial )
+add_custom_command(OUTPUT ESMF_AttPackABundleUTest.F90
+    MAIN_DEPENDENCY ESMF_AttPackABundleUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttPackABundleUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttPackABundleUTest.F90)
+add_custom_command(OUTPUT ESMF_AttPackArrayUTest.F90
+    MAIN_DEPENDENCY ESMF_AttPackArrayUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttPackArrayUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttPackArrayUTest.F90)
+add_custom_command(OUTPUT ESMF_AttPackCplCompUTest.F90
+    MAIN_DEPENDENCY ESMF_AttPackCplCompUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttPackCplCompUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttPackCplCompUTest.F90)
+add_custom_command(OUTPUT ESMF_AttPackDistGridUTest.F90
+    MAIN_DEPENDENCY ESMF_AttPackDistGridUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttPackDistGridUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttPackDistGridUTest.F90)
+add_custom_command(OUTPUT ESMF_AttPackFBundleUTest.F90
+    MAIN_DEPENDENCY ESMF_AttPackFBundleUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttPackFBundleUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttPackFBundleUTest.F90)
+add_custom_command(OUTPUT ESMF_AttPackFieldUTest.F90
+    MAIN_DEPENDENCY ESMF_AttPackFieldUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttPackFieldUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttPackFieldUTest.F90)
+add_custom_command(OUTPUT ESMF_AttPackGridCompUTest.F90
+    MAIN_DEPENDENCY ESMF_AttPackGridCompUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttPackGridCompUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttPackGridCompUTest.F90)
+add_custom_command(OUTPUT ESMF_AttPackGridUTest.F90
+    MAIN_DEPENDENCY ESMF_AttPackGridUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttPackGridUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttPackGridUTest.F90)
+add_custom_command(OUTPUT ESMF_AttPackLocStreamUTest.F90
+    MAIN_DEPENDENCY ESMF_AttPackLocStreamUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttPackLocStreamUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttPackLocStreamUTest.F90)
+add_custom_command(OUTPUT ESMF_AttPackSciCompUTest.F90
+    MAIN_DEPENDENCY ESMF_AttPackSciCompUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttPackSciCompUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttPackSciCompUTest.F90)
+add_custom_command(OUTPUT ESMF_AttPackStateUTest.F90
+    MAIN_DEPENDENCY ESMF_AttPackStateUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttPackStateUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttPackStateUTest.F90)
+add_custom_command(OUTPUT ESMF_AttributeABundleUTest.F90
+    MAIN_DEPENDENCY ESMF_AttributeABundleUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttributeABundleUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttributeABundleUTest.F90)
+add_custom_command(OUTPUT ESMF_AttributeArrayUTest.F90
+    MAIN_DEPENDENCY ESMF_AttributeArrayUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttributeArrayUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttributeArrayUTest.F90)
+add_custom_command(OUTPUT ESMF_AttributeCplCompUTest.F90
+    MAIN_DEPENDENCY ESMF_AttributeCplCompUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttributeCplCompUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttributeCplCompUTest.F90)
+add_custom_command(OUTPUT ESMF_AttributeDistGridUTest.F90
+    MAIN_DEPENDENCY ESMF_AttributeDistGridUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttributeDistGridUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttributeDistGridUTest.F90)
+add_custom_command(OUTPUT ESMF_AttributeFBundleUTest.F90
+    MAIN_DEPENDENCY ESMF_AttributeFBundleUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttributeFBundleUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttributeFBundleUTest.F90)
+add_custom_command(OUTPUT ESMF_AttributeFieldUTest.F90
+    MAIN_DEPENDENCY ESMF_AttributeFieldUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttributeFieldUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttributeFieldUTest.F90)
+add_custom_command(OUTPUT ESMF_AttributeGridCompUTest.F90
+    MAIN_DEPENDENCY ESMF_AttributeGridCompUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttributeGridCompUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttributeGridCompUTest.F90)
+add_custom_command(OUTPUT ESMF_AttributeGridUTest.F90
+    MAIN_DEPENDENCY ESMF_AttributeGridUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttributeGridUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttributeGridUTest.F90)
+add_custom_command(OUTPUT ESMF_AttributeLocStreamUTest.F90
+    MAIN_DEPENDENCY ESMF_AttributeLocStreamUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttributeLocStreamUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttributeLocStreamUTest.F90)
+add_custom_command(OUTPUT ESMF_AttributeSciCompUTest.F90
+    MAIN_DEPENDENCY ESMF_AttributeSciCompUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttributeSciCompUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttributeSciCompUTest.F90)
+add_custom_command(OUTPUT ESMF_AttributeStateUTest.F90
+    MAIN_DEPENDENCY ESMF_AttributeStateUTest.cppF90
+    VERBATIM
+    COMMAND ${ESMF_BINARY_DIR}/cppF90_to_F90 ${ESMF_SOURCE_DIR}/ESMF_AttributeStateUTest.cppF90 ${ESMF_BINARY_DIR}/ESMF_AttributeStateUTest.F90)
+set(AUTOGEN ESMF_AttPackABundleUTest.F90 ESMF_AttPackArrayUTest.F90 ESMF_AttPackCplCompUTest.F90 ESMF_AttPackDistGridUTest.F90 ESMF_AttPackFBundleUTest.F90 ESMF_AttPackFieldUTest.F90 ESMF_AttPackGridCompUTest.F90 ESMF_AttPackGridUTest.F90 ESMF_AttPackLocStreamUTest.F90 ESMF_AttPackSciCompUTest.F90 ESMF_AttPackStateUTest.F90 ESMF_AttributeABundleUTest.F90 ESMF_AttributeArrayUTest.F90 ESMF_AttributeCplCompUTest.F90 ESMF_AttributeDistGridUTest.F90 ESMF_AttributeFBundleUTest.F90 ESMF_AttributeFieldUTest.F90 ESMF_AttributeGridCompUTest.F90 ESMF_AttributeGridUTest.F90 ESMF_AttributeLocStreamUTest.F90 ESMF_AttributeSciCompUTest.F90 ESMF_AttributeStateUTest.F90)

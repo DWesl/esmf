@@ -81,12 +81,3 @@ ESMF_CXXCOMPILECPPFLAGS += -I$(ESMF_DIR)/$(LOCDIR)/.. \
 													 -I$(ESMF_DIR)/$(LOCDIR)/../Moab/parallel \
                            -I$(ESMF_DIR)/$(LOCDIR)/../Moab/LocalDiscretization
 endif
-
-DIRS	  = Legacy Regridding Zoltan
-ifeq ($(ESMF_LAPACK),internal)
-DIRS	 += Lapack BLAS
-STOREH   +=
-endif
-ifeq ($(ESMF_MOAB),internal)
-DIRS     += Moab
-endif

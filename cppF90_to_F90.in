@@ -1,0 +1,7 @@
+#!/bin/bash
+in_file="${1}"
+out_file="${in_file/%.cppF90/F90}"
+
+@CMAKE_CPP_COMPILER@ -I@ESMF_INCDIR@ "${in_file}" \
+  | tr "@^|" "\n#'" \
+  | @ESMF_SED@ -e '/^#pragma GCC/d' >"${out_file}"

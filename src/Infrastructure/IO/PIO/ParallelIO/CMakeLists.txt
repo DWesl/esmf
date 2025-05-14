@@ -262,12 +262,14 @@ if (PIO_ENABLE_FORTRAN)
     pkg_check_modules(NetCDF_Fortran REQUIRED IMPORTED_TARGET "netcdf-fortran")
   endif()
   if (WITH_PNETCDF)
-    find_package (PnetCDF COMPONENTS C Fortran)
+    find_package (PnetCDF REQUIRED COMPONENTS C Fortran)
+  else()
+    find_package(NetCDF REQUIRED COMPONENTS C Fortran)
   endif()
 else()
   find_package (NetCDF REQUIRED COMPONENTS C)
   if (WITH_PNETCDF)
-    find_package (PnetCDF COMPONENTS C)
+    find_package (PnetCDF REQUIRED COMPONENTS C)
   endif()
 endif()
 
@@ -279,6 +281,7 @@ endif ()
 #==============================================================================
 #  INCLUDE SOURCE DIRECTORIES
 #==============================================================================
+include_directories("${PIO_BINARY_DIR}")
 
 # Libraries
 add_subdirectory (src)

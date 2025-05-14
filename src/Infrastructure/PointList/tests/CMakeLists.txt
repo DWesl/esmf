@@ -1,0 +1,17 @@
+
+target_include_directories(esmf PRIVATE ${ESMF_SOURCE_DIR}/src/Infrastructure/PointList/tests/../include)
+
+if(${Git_FOUND})
+    string(REGEX REPLACE "^([0-9]+)\.([0-9]+)(\.[0-9]+)?$" "\\1.\\2" ESMF_VERSION_STRING_GIT ${GIT_VERSION_STRING})
+    add_compile_definitions(ESMF_VERSION_STRING_GIT="${ESMF_VERSION_STRING_GIT}")
+endif()
+target_include_directories(esmf PRIVATE ../src/Moab)
+add_executable(ESMF_PointListUTest  ESMF_PointListUTest.F90)
+target_link_libraries(ESMF_PointListUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_PointListUTest OpenMP::OpenMP_Fortran)
+endif()
+add_test(RUN_ESMF_PointListUTest COMMAND ESMF_PointListUTest)
+set_property(TEST RUN_ESMF_PointListUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_PointListUTestUNI COMMAND ESMF_PointListUTest)
+set_property(TEST RUN_ESMF_PointListUTestUNI PROPERTY LABEL serial )

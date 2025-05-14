@@ -1,0 +1,16 @@
+
+if(${Git_FOUND})
+    string(REGEX REPLACE "^([0-9]+)\.([0-9]+)(\.[0-9]+)?$" "\\1.\\2" ESMF_VERSION_STRING_GIT ${GIT_VERSION_STRING})
+    add_compile_definitions(ESMF_VERSION_STRING_GIT="${ESMF_VERSION_STRING_GIT}")
+endif()
+
+if(ESMF_ACC_SOFTWARE_STACK STREQUAL opencl)
+target_sources(esmf PRIVATE ESMCI_OpenCLInfo.C)
+elseif(ESMF_ACC_SOFTWARE_STACK STREQUAL openacc)
+target_sources(esmf PRIVATE ESMCI_OpenACCInfo.C)
+elseif(ESMF_ACC_SOFTWARE_STACK STREQUAL intelmic)
+target_sources(esmf PRIVATE ESMCI_IntelMICInfo.C)
+elseif(ESMF_ACC_SOFTWARE_STACK STREQUAL openmp4)
+target_sources(esmf PRIVATE ESMCI_OpenMP4Info.C)
+target_link_libraries(esmf OpenMP::OpenMP_CXX)
+endif()

@@ -8,6 +8,7 @@ PET*.ESMF_LogFile
 *.out
 *.csv
 /log*
+*.o
 
 # esmf build generated directories #
 ####################################
@@ -133,6 +134,10 @@ src/Infrastructure/Trace/preload/wrappers_mpi.o
 ###############################################################################
 
 */cmake-build-debug/*
+CMakeCache.txt
+CMakeConfigury.txt
+CMakeFiles
+CMakeFile.txt
 
 ###############################################################################
 # ESMPy

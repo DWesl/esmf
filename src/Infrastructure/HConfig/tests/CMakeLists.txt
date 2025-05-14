@@ -1,0 +1,16 @@
+
+target_include_directories(esmf PRIVATE ${ESMF_SOURCE_DIR}/src/Infrastructure/HConfig/tests/../include)
+
+if(${Git_FOUND})
+    string(REGEX REPLACE "^([0-9]+)\.([0-9]+)(\.[0-9]+)?$" "\\1.\\2" ESMF_VERSION_STRING_GIT ${GIT_VERSION_STRING})
+    add_compile_definitions(ESMF_VERSION_STRING_GIT="${ESMF_VERSION_STRING_GIT}")
+endif()
+add_executable(ESMF_HConfigUTest  ESMF_HConfigUTest.F90)
+target_link_libraries(ESMF_HConfigUTest esmf)
+if(ESMF_OPENMP)
+target_link_libraries(ESMF_HConfigUTest OpenMP::OpenMP_Fortran)
+endif()
+add_test(RUN_ESMF_HConfigUTest COMMAND ESMF_HConfigUTest)
+set_property(TEST RUN_ESMF_HConfigUTest PROPERTY LABEL MPI )
+add_test(RUN_ESMF_HConfigUTestUNI COMMAND ESMF_HConfigUTest)
+set_property(TEST RUN_ESMF_HConfigUTestUNI PROPERTY LABEL serial )
